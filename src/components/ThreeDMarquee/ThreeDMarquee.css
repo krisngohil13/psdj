@@ -1,0 +1,182 @@
+.marquee-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #000;
+  padding: 8rem 0;
+}
+
+.marquee-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(25, 55, 109, 0.2) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(25, 55, 109, 0.2) 0%, transparent 70%);
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.pattern-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.marquee-container {
+  width: 1720px;
+  transform: scale(0.5) translateY(-15%);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .marquee-container {
+    transform: scale(0.75) translateY(-15%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .marquee-container {
+    transform: scale(1) translateY(-15%);
+  }
+}
+
+.marquee-grid {
+  transform: rotateX(55deg) rotateY(0deg) rotateZ(-45deg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  transform-origin: center;
+}
+
+.marquee-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.scroll-up {
+  animation-name: scrollUp;
+  animation-duration: 15s;
+}
+
+.scroll-down {
+  animation-name: scrollDown;
+  animation-duration: 10s;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+.marquee-image-wrapper {
+  position: relative;
+  filter: brightness(0.9);
+}
+
+.marquee-image-wrapper img {
+  width: 100%;
+  max-width: 970px;
+  height: auto;
+  aspect-ratio: 970 / 700;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-image-wrapper img:hover {
+  transform: translateY(-10px) scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Grid lines */
+.grid-line-horizontal {
+  position: absolute;
+  top: -4px;
+  left: -80px;
+  width: calc(100% + 160px);
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 50%, transparent 0%);
+  background-size: 5px 1px;
+  z-index: 1;
+}
+
+.grid-line-vertical {
+  position: absolute;
+  left: -4px;
+  top: -75px;
+  height: calc(100% + 150px);
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 50%, transparent 0%);
+  background-size: 1px 5px;
+  z-index: 1;
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(10px) translateX(5px);
+  }
+} 

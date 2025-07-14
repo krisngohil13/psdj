@@ -1,0 +1,185 @@
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('../../assets/images/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Add an overlay to ensure text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Light overlay to maintain readability */
+    z-index: 1;
+}
+
+/* Ensure content stays on top */
+.contentWrapper {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+}
+
+.textContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  min-height: calc(2 * clamp(2rem, 6vw, 4.5rem)); /* Reserve space for two lines */
+}
+
+.titleFirst,
+.titleSecond {
+  display: block;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.titleFirst {
+  color: #ffffff;
+}
+
+.titleSecond {
+  color: #dee2e6;
+}
+
+.subtitleWrapper {
+  margin-top: 1.5rem;
+  min-height: calc(1.5 * clamp(1.3rem, 3vw, 1.5rem)); /* Reserve space for subtitle */
+}
+
+.subtitle {
+  color: #c4c2c2;
+  font-family: 'Baskerville', serif;
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .title {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .titleFirst,
+  .titleSecond {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    max-width: 400px;
+  }
+}
+
+/* Background Pattern - Adjusted for mobile */
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07; /* Reduced opacity for mobile */
+}
+
+.dotPattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* Smaller pattern for mobile */
+}
+
+/* Scroll Indicator - Mobile optimized */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+}
+
+.scrollContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollText {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: #d0d0d0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.scrollBox {
+  width: 1rem;
+  height: 1.75rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.scrollDot {
+  width: 0.2rem;
+  height: 0.2rem;
+  background-color: #e9ecef;
+  border-radius: 50%;
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+  .contentWrapper {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .scrollBox {
+    width: 1.25rem;
+    height: 2rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: clamp(4.5rem, 6vw, 7rem);
+  }
+
+  .subtitle {
+    max-width: 500px;
+  }
+
+  .dotPattern {
+    background-size: 24px 24px;
+  }
+} 

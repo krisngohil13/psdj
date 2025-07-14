@@ -1,0 +1,235 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.marqueeSection {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  margin: 2rem 0;
+  overflow: hidden;
+} 
+
+/* Achievements Section */
+.achievementsSection {
+  padding: 8rem 6rem;
+  background: #000000;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.achievementsOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(248, 249, 250, 0.15), transparent 70%);
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+.achievementsContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.achievementCard {
+  position: relative;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.achievementContent {
+  position: relative;
+  z-index: 1;
+}
+
+.achievementStat {
+  font-size: 4rem;
+  color: #f8f9fa;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.achievementText {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.achievementSubtext {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.achievementDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, transparent, rgba(248, 249, 250, 0.1));
+  border-radius: 0 0 0 100%;
+  transform: translate(50%, -50%);
+}
+
+/* Achievement Title Styles */
+.achievementTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achievementTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(248, 249, 250, 0.3) 25%,
+    rgba(248, 249, 250, 0.8) 50%,
+    rgba(248, 249, 250, 0.3) 75%,
+    transparent 100%
+  );
+}
+
+.achievementTitle .titleLight {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(248, 249, 250, 0.6);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.achievementTitle .titleBold {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  display: block;
+}
+
+.achievementTitle .titleDecoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(248, 249, 250, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.achievementTitle .titleDecoration::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(248, 249, 250, 0.05);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .achievementsSection {
+    padding: 6rem 4rem;
+  }
+  
+  .achievementStat {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievementsSection {
+    padding: 4rem 2rem;
+  }
+  
+  .achievementsGrid {
+    gap: 2rem;
+  }
+  
+  .achievementStat {
+    font-size: 3rem;
+  }
+  
+  .achievementTitle .titleBold {
+    font-size: 2.8rem;
+  }
+  
+  .achievementTitle .titleLight {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  
+  .achievementTitle .titleDecoration {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .achievementTitle .titleDecoration::before {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementsSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .achievementCard {
+    padding: 2rem;
+  }
+  
+  .achievementStat {
+    font-size: 2.5rem;
+  }
+  
+  .achievementTitle .titleBold {
+    font-size: 2.2rem;
+  }
+  
+  .achievementTitle .titleLight {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .achievementTitle .titleDecoration {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .achievementTitle .titleDecoration::before {
+    width: 50px;
+    height: 50px;
+  }
+} 

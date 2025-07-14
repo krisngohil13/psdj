@@ -1,0 +1,1360 @@
+.expertisePage {
+  padding: 0;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
+/* Background Pattern */
+.backgroundPattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+  background: 
+  linear-gradient(90deg, transparent 95%, rgba(193, 192, 192, 0.1) 95%), linear-gradient(transparent 95%, rgba(131, 131, 131, 0.1) 95%);
+  background-size: 30px 30px;
+  pointer-events: none;
+  transform: translateZ(-1px) scale(2);
+}
+
+/* Hero Section */
+.heroSection {
+  min-height: 100vh;
+  padding: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+}
+
+.heroContent {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.heroText {
+  max-width: 600px;
+}
+
+.heroLabel {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(248, 249, 250, 0.6);
+  margin-bottom: 2rem;
+}
+
+.mainTitle {
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.titleLight {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: rgba(248, 249, 250, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.titleBold {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  letter-spacing: -1px;
+}
+
+.mainDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(248, 249, 250, 0.6);
+  margin-bottom: 4rem;
+  max-width: 500px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 4rem;
+  margin-top: 6rem;
+}
+
+.statItem {
+  position: relative;
+}
+
+.statNumber {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.statLabel {
+  display: block;
+  font-size: 1rem;
+  color: rgba(248, 249, 250, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.heroVisuals {
+  flex: 1;
+  position: relative;
+  height: 80vh;
+  will-change: transform;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%); */
+  will-change: transform, opacity;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3)
+  );
+  mix-blend-mode: multiply;
+}
+
+.decorativeElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.verticalLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2rem;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(248, 249, 250, 0.1),
+    transparent
+  );
+}
+
+.horizontalLine {
+  position: absolute;
+  left: -4rem;
+  right: 0;
+  bottom: -2rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(248, 249, 250, 0.1),
+    transparent
+  );
+}
+
+/* Approach Section Styles */
+.approachSection {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle h2 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.approachCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approachCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.approachImage {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  will-change: transform;
+}
+
+.approachCard:hover .approachImage {
+  transform: scale(1.03);
+}
+
+.approachTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.approachDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.approachStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.statItem {
+  flex: 1;
+}
+
+.statNumber1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Decorative elements */
+.approachCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.approachCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}
+
+/* Expertise Section */
+.expertiseAreasSection {
+  padding: 8rem 6rem;
+  background: linear-gradient(to right, #f9f9f9, #fff);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.expertiseCard {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.expertiseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+  padding: 2.5rem;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cardNumber {
+  font-size: 3rem;
+  font-weight: 600;
+  color: rgba(194, 136, 64, 0.15);
+  line-height: 1;
+}
+
+.cardImage {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cardImage:hover img {
+  transform: scale(1.1);
+}
+
+.cardImage .imageOverlay {
+  background: linear-gradient(45deg, rgba(194, 136, 64, 0.2), transparent);
+}
+
+.expertiseTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.expertiseDescription {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.learnMore {
+  color: #C28840;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.learnMore::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #C28840;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.expertiseCard:hover .learnMore::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Achievements Section */
+.achievementsSection {
+  padding: 8rem 6rem;
+  background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.achievementsOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(194, 136, 64, 0.15), transparent 70%);
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+.achievementsContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.achievementCard {
+  position: relative;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.achievementContent {
+  position: relative;
+  z-index: 1;
+}
+
+.achievementStat {
+  font-size: 4rem;
+  color: #C28840;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.achievementText {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.achievementSubtext {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.achievementDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, transparent, rgba(194, 136, 64, 0.1));
+  border-radius: 0 0 0 100%;
+  transform: translate(50%, -50%);
+}
+
+/* Values Section */
+.valuesSection {
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.valueCard {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 12px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.valueCard h3 {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.valueCard p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metricNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .heroSection {
+    padding: 4rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .heroText {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .titleLight {
+    font-size: 3rem;
+  }
+
+  .titleBold {
+    font-size: 4rem;
+  }
+
+  .mainDescription {
+    margin: 0 auto 3rem;
+  }
+
+  .heroStats {
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  .heroVisuals {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 2rem;
+  }
+
+  .heroLabel {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  .titleLight {
+    font-size: 2.5rem;
+  }
+
+  .titleBold {
+    font-size: 3rem;
+  }
+
+  .mainDescription {
+    font-size: 1.1rem;
+  }
+
+  .heroStats {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .statNumber {
+    font-size: 2.8rem;
+  }
+
+  .heroVisuals {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .heroContent {
+    padding: 2rem 1rem;
+    position: relative;
+    margin-top: 4rem;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .heroLabel {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+  }
+
+  .mainTitle {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .titleLight {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .titleBold {
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1.2;
+    display: block;
+  }
+
+  .mainDescription {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 100%;
+  }
+
+  .heroStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .statItem {
+    text-align: left;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .heroVisuals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: grayscale(100%);
+  }
+
+  .imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .backgroundPattern {
+    opacity: 0.05;
+    background-size: 20px 20px;
+  }
+
+  .decorativeElements {
+    display: none;
+  }
+
+  /* New Approach Section Mobile Styles */
+  .approachSection {
+    padding: 4rem 0 2rem;
+    position: relative;
+  }
+
+  .approachGrid {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .approachCard {
+    position: relative;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  .approachImage {
+    height: 250px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .approachImage::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+    border-radius: 8px;
+  }
+
+  .approachTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .approachTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0.5rem;
+    width: 40px;
+    height: 2px;
+    background: #000;
+  }
+
+  .approachDescription {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .approachStats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .statNumber1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Remove all hover effects */
+  .approachCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .approachCard:hover .approachImage {
+    transform: none;
+  }
+
+  .approachImage:hover {
+    transform: none;
+  }
+
+  /* Add subtle divider between cards */
+  .approachCard:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .valuesSection {
+    padding: 4rem 0;
+  }
+
+  .valuesGrid {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .valueCard {
+    padding: 1.5rem;
+  }
+
+  .valueCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .valueCard:hover .iconWrapper {
+    transform: none;
+  }
+
+  .valueCard h3 {
+    font-size: 1.25rem;
+  }
+
+  .valueCard p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric {
+    gap: 0.25rem;
+  }
+
+  .metricNumber {
+    font-size: 2rem;
+  }
+
+  .metricLabel {
+    font-size: 0.75rem;
+  }
+
+  .sectionTitle {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .sectionTitle h2 {
+    font-size: 2rem;
+  }
+
+  .sectionTitle p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .heroSection,
+  .approachSection,
+  .expertiseAreasSection,
+  .achievementsSection,
+  .valuesSection {
+    padding: 6rem 4rem;
+  }
+
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+
+  .approachGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .heroContent {
+    margin-bottom: 3rem;
+  }
+
+  .heroImage {
+    margin-left: 0;
+  }
+
+  .mainTitle {
+    font-size: 2.8rem;
+  }
+
+  .expertiseGrid,
+  .achievementsGrid,
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .expertiseAreasSection,
+  .approachSection,
+  .achievementsSection,
+  .valuesSection {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+
+  .mainDescription {
+    font-size: 1.1rem;
+  }
+
+  .expertiseCard {
+    padding: 2rem;
+  }
+
+  .cardNumber {
+    font-size: 3rem;
+  }
+
+  .achievementStat {
+    font-size: 3rem;
+  }
+}
+
+/* Responsive Design - Expertise Section */
+@media (max-width: 1200px) {
+  .expertiseAreasSection {
+    padding: 6rem 4rem;
+  }
+
+  .expertiseGrid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .expertiseAreasSection {
+    padding: 5rem 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .expertiseGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .expertiseAreasSection {
+    padding: 4rem 2rem;
+  }
+
+  .expertiseGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .cardNumber {
+    font-size: 2.5rem;
+  }
+
+  .expertiseTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertiseAreasSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .cardContent {
+    padding: 2rem;
+  }
+}
+
+/* Responsive Design - Values & Achievements */
+@media (max-width: 1200px) {
+  .achievementsSection,
+  .valuesSection {
+    padding: 6rem 4rem;
+  }
+
+  .achievementStat {
+    font-size: 3.5rem;
+  }
+
+  .achievementText {
+    font-size: 1.3rem;
+  }
+
+  .valueTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .achievementsGrid,
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .achievementCard,
+  .valueCard {
+    padding: 2.5rem;
+  }
+
+  .valueIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievementsSection,
+  .valuesSection {
+    padding: 4rem 2rem;
+  }
+
+  .achievementsGrid,
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .achievementStat {
+    font-size: 3rem;
+  }
+
+  .achievementText {
+    font-size: 1.2rem;
+  }
+
+  .valueTitle {
+    font-size: 1.3rem;
+  }
+
+  .valueDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementsSection,
+  .valuesSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .achievementCard,
+  .valueCard {
+    padding: 2rem;
+  }
+
+  .achievementStat {
+    font-size: 2.5rem;
+  }
+
+  .valueIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.expertiseSection {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.expertiseContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.expertiseStep {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.expertiseStep:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.stepContent {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+}
+
+.stepNumber {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: -2rem;
+  left: 0;
+}
+
+.stepText {
+  position: relative;
+  z-index: 1;
+}
+
+.stepText h3 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.stepText p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.stepStats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stepImage {
+  flex: 1;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+}
+
+.stepImage img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.stepImage:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .expertiseStep {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .expertiseStep:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .stepImage {
+    width: 100%;
+  }
+
+  .stepImage img {
+    height: 300px;
+  }
+}
+
+/* Add will-change to optimize animations */
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%); */
+  will-change: transform, opacity;
+}
+
+/* Ensure smooth animations on mobile */
+@media (max-width: 768px) {
+  .approachImage,
+  .stepImage img,
+  .heroImage {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+} 

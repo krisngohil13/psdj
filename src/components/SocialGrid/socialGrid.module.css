@@ -1,0 +1,291 @@
+.socialSection {
+  padding: 3rem 6rem;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title Styles */
+.titleContainer {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.titleLine {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(248, 249, 250, 0.6);
+}
+
+.titleAccent {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  letter-spacing: -1px;
+}
+
+.titleDecoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(248, 249, 250, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.titleDecoration::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(248, 249, 250, 0.05);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Grid Layout */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
+/* Card Design */
+.gridItem {
+  text-decoration: none;
+  color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gridItem:hover {
+  transform: translateY(-5px);
+}
+
+.itemContent {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gridItem:hover .backgroundImage {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+}
+
+.gridItem:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Platform Info */
+.platformInfo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.gridItem:hover .iconWrapper {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.textContent {
+  text-align: center;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.gridItem:hover .textContent {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.platformName {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f8f9fa;
+}
+
+.followText {
+  display: block;
+  font-size: 1rem;
+  color: rgba(248, 249, 250, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Remove hover effect border */
+.hoverEffect {
+  display: none;
+}
+
+/* Decorative Elements */
+.decorativeElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.line {
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(248, 249, 250, 0.1) 50%,
+    transparent 100%
+  );
+  top: 20%;
+  right: 10%;
+  transform: rotate(-45deg);
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(248, 249, 250, 0.3);
+  border-radius: 50%;
+  bottom: 30%;
+  left: 15%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .socialSection {
+    padding: 6rem 4rem;
+  }
+  
+  .titleAccent {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .socialSection {
+    padding: 4rem 2rem;
+  }
+  
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .titleLine {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  
+  .titleAccent {
+    font-size: 2.5rem;
+  }
+  
+  .platformName {
+    font-size: 1.8rem;
+  }
+
+  .iconWrapper {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .titleLine {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .titleAccent {
+    font-size: 2rem;
+  }
+  
+  .platformName {
+    font-size: 1.5rem;
+  }
+  
+  .followText {
+    font-size: 0.9rem;
+  }
+
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
+  }
+} 

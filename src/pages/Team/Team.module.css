@@ -1,0 +1,1743 @@
+/* Base Styles */
+.teamPage {
+  padding: 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+
+
+/* Hero Section */
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 16px;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subTitle {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #686868;
+  font-weight: 500;
+}
+
+.mainTitle {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+.titleSpan {
+  background: linear-gradient(to right, #d3d3d3, #686868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #a1a1a1;
+}
+
+.heroRight {
+  position: relative;
+  height: 300px;
+}
+
+.imageGrid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.mainImageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  height: 100%;
+}
+
+.smallImagesContainer {
+  display: none;
+}
+
+.mainImage, .smallImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Tablet (iPad) View */
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 120px 24px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .heroLeft {
+    gap: 24px;
+  }
+
+  .subTitle {
+    font-size: 1rem;
+    letter-spacing: 4px;
+  }
+
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .heroRight {
+    height: 500px;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .mainImageContainer {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  .smallImagesContainer {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    height: 100%;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+  .mainTitle {
+    font-size: 4rem;
+  }
+
+  .heroRight {
+    height: 600px;
+  }
+}
+
+/* Parallax Background - Hidden on Mobile */
+.parallaxBg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .parallaxBg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(64, 64, 64, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(64, 64, 64, 0.2) 0%, transparent 40%);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+
+
+/* Team Section */
+.teamSection {
+  background: #fff;
+  padding: 120px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.teamCard {
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  will-change: transform;
+  transform-origin: center;
+  perspective: 1000px;
+  backface-visibility: hidden;
+  cursor: pointer;
+  min-height: 600px;
+}
+
+.teamCard:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+}
+
+/* Background Role Text */
+.backgroundRole {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.roleWord {
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Card Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Member Image */
+.memberImageContainer {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.memberImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  opacity: 0;
+  will-change: opacity, background;
+  transition: opacity 0.2s ease-out;
+}
+
+.memberImageContainer:hover .imageOverlay {
+  opacity: 1;
+}
+
+/* Member Info */
+.memberInfo {
+  flex: 1;
+}
+
+.memberName {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.memberRoleText {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.memberDivider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #000, transparent);
+  margin-bottom: 20px;
+  transform-origin: left;
+}
+
+.memberDescription {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.memberExpertise {
+  margin-bottom: 25px;
+}
+
+.memberExpertise h4 {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.expertiseList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertiseTag {
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
+}
+
+.expertiseTag:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.memberQuote {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-style: italic;
+  line-height: 1.5;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  padding-left: 16px;
+  margin: 0;
+}
+
+/* Decorative Elements */
+.cardDecorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cornerDecoration {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.teamCard:hover .cornerDecoration {
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+.sideDecoration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2), transparent);
+  transition: all 0.3s ease;
+}
+
+.teamCard:hover .sideDecoration {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4), transparent);
+  height: 80px;
+}
+
+/* Updated Collaboration Section */
+.collaborationSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.collaborationSection::before {
+  content: 'COLLABORATION';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(8rem, 15vw, 12rem);
+  font-weight: 900;
+  color: rgba(26, 26, 26, 0.03);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.collaborationWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.collaborationHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.collaborationHeader h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.collaborationHeader p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.collaborationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Left Side - Text Content */
+.collaborationText {
+  position: relative;
+  padding-right: 40px;
+}
+
+.collaborationText::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #1a1a1a, transparent);
+}
+
+.collaborationText h3 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.collaborationText p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.collaborationButton {
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.collaborationButton:hover {
+  background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Right Side - Image Grid */
+.collaborationImages {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  aspect-ratio: 1;
+}
+
+.collaborationImage {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.collaborationImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.collaborationImage:hover img {
+  transform: scale(1.05);
+}
+
+.image1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.image2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.image3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Joining Elements */
+.joiningElement {
+  position: absolute;
+  width: 4px;
+  height: 60px;
+  background: linear-gradient(to bottom, #1a1a1a, transparent);
+  border-radius: 2px;
+}
+
+.joiningLeft {
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.joiningRight {
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Updated Stats Section */
+.collaborationStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.statItem {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.statItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.04),
+    0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(26, 26, 26, 0.15);
+}
+
+.statItem:hover::before {
+  transform: scaleX(1);
+}
+
+.statNumber {
+  display: block;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statItem p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Individual stat styling */
+.statItem:nth-child(1) {
+  border-left: 4px solid #1a1a1a;
+}
+
+.statItem:nth-child(2) {
+  border-left: 4px solid #4a4a4a;
+}
+
+.statItem:nth-child(3) {
+  border-left: 4px solid #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .collaborationGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .collaborationText {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .collaborationText::before {
+    display: none;
+  }
+
+  .collaborationStats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .statItem {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collaborationSection {
+    padding: 80px 0;
+  }
+
+  .collaborationSection::before {
+    font-size: clamp(4rem, 10vw, 6rem);
+  }
+
+  .collaborationStats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .collaborationImages {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .image1,
+  .image2,
+  .image3 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .statItem p {
+    font-size: 1rem;
+  }
+}
+
+/* Team Achievements Section */
+.achievementsSection {
+  background: #ffffff;
+  padding: 120px 0;
+}
+
+.achievementsContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.achievementsHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.achievementsHeader h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.achievementsHeader p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.achievementCard {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievementCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.achievementContent {
+  position: relative;
+  z-index: 1;
+}
+
+.achievementIcon {
+  font-size: 32px;
+  color: #1a1a1a;
+}
+
+.achievementText h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 12px;
+  color: #1a1a1a;
+}
+
+.achievementText p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.cardDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 100%);
+  border-radius: 0 20px 0 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cultureSectionWrapper,
+  .achievementsSection {
+    padding: 80px 0;
+  }
+
+  .cultureGrid,
+  .achievementsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cultureCard,
+  .achievementCard {
+    padding: 30px;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cultureIcon,
+  .achievementIcon {
+    font-size: 24px;
+  }
+}
+
+/* Animation Utilities */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeUp {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.teamContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Updated Unified Culture & Excellence Section */
+.unifiedSection {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #1a1a1a;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.parallaxBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(26, 26, 26, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(26, 26, 26, 0.03) 0%, transparent 40%),
+    repeating-linear-gradient(90deg, rgba(26, 26, 26, 0.02) 0px, rgba(26, 26, 26, 0.02) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(0deg, rgba(26, 26, 26, 0.02) 0px, rgba(26, 26, 26, 0.02) 1px, transparent 1px, transparent 40px);
+  transform-origin: top;
+  will-change: transform;
+  z-index: 1;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.sectionHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+}
+
+.sectionLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #666;
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.sectionHeader h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.sectionHeader p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Tree Structure Layout */
+.treeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Root Node */
+.rootNode {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.rootNode::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to bottom, #1a1a1a, transparent);
+}
+
+.rootIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.rootTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.rootSubtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+  margin: 0;
+}
+
+/* Branch Container */
+.branchContainer {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.branchContainer::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, #1a1a1a);
+}
+
+/* Branch Nodes */
+.branchNode {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(26, 26, 26, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.branchNode::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.3), transparent);
+}
+
+.branchIcon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.branchTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 4px 0;
+  color: #1a1a1a;
+}
+
+.branchSubtitle {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+  color: #666;
+}
+
+/* Leaf Container */
+.leafContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.leafNode {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.leafIcon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.leafTitle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.leafSubtitle {
+  font-size: 0.7rem;
+  text-align: center;
+  margin: 0;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .branchContainer {
+    gap: 40px;
+  }
+
+  .branchNode {
+    width: 140px;
+    height: 140px;
+  }
+
+  .leafContainer {
+    gap: 30px;
+  }
+
+  .leafNode {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .unifiedSection {
+    padding: 80px 0;
+  }
+
+  .treeContainer {
+    gap: 40px;
+  }
+
+  .rootNode {
+    width: 160px;
+    height: 160px;
+  }
+
+  .rootIcon {
+    font-size: 36px;
+  }
+
+  .branchContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .branchNode {
+    width: 120px;
+    height: 120px;
+  }
+
+  .leafContainer {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .leafNode {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Parallax Animation */
+@keyframes subtleParallax {
+  from {
+    transform: translateY(0) rotate(0.1deg);
+  }
+  to {
+    transform: translateY(-10%) rotate(-0.1deg);
+  }
+}
+
+.parallaxBackground {
+  animation: subtleParallax 15s ease-in-out infinite alternate;
+} 
+
+@media (max-width: 767px) {
+  .heroSection {
+    min-height: 80vh;
+    padding: 72px 20px 40px 20px; /* Added top padding for header */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.18) 60%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  .heroGrid {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heroLeft {
+    gap: 16px;
+    order: 2;
+  }
+
+  .heroRight {
+    order: 1;
+    height: 200px; /* Reduced for better spacing */
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .subTitle {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #b1b1b1;
+  }
+
+  .imageGrid {
+    gap: 6px;
+  }
+
+  .mainImageContainer {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .mainImage, .smallImage {
+    border-radius: 16px;
+  }
+
+  /* Add decorative elements for mobile */
+  .heroSection::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 0 0 0;
+    z-index: 4;
+  }
+
+  .heroSection::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 8px 0;
+    z-index: 4;
+  }
+
+  .teamSection {
+    padding: 60px 10px;
+    background: #fff;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .teamGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .teamCard {
+    min-height: unset;
+    padding: 24px 12px 20px 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 0 0;
+  }
+
+  .backgroundRole {
+    display: none;
+  }
+
+  .memberImageContainer {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .memberImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .cardContent {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .memberName {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .memberRoleText {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+  .memberDivider {
+    width: 40px;
+    height: 2px;
+    margin-bottom: 12px;
+  }
+
+  .memberDescription {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+  .memberExpertise {
+    margin-bottom: 10px;
+  }
+
+  .expertiseList {
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .expertiseTag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 14px;
+  }
+
+  .memberQuote {
+    font-size: 0.9rem;
+    padding-left: 0;
+    border-left: none;
+    color: #888;
+  }
+
+  .cardDecorations {
+    display: none;
+  }
+
+  .unifiedSection {
+    padding: 60px 0;
+  }
+
+  .treeContainer {
+    gap: 32px;
+  }
+
+  .rootNode, .branchNode, .leafNode {
+    min-width: 90px;
+    max-width: 95vw;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    word-break: break-word;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rootNode {
+    width: auto;
+    min-width: 110px;
+    max-width: 95vw;
+    border-radius: 14px;
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+  .rootIcon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .rootTitle {
+    font-size: 1rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+  .rootSubtitle {
+    font-size: 0.8rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .branchContainer {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+  }
+  .branchNode {
+    width: auto;
+    min-width: 90px;
+    max-width: 90vw;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+  .branchIcon {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .branchTitle {
+    font-size: 0.92rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+  .branchSubtitle {
+    font-size: 0.7rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .leafContainer {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .leafNode {
+    width: auto;
+    min-width: 70px;
+    max-width: 44vw;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  .leafIcon {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .leafTitle {
+    font-size: 0.75rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+  .leafSubtitle {
+    font-size: 0.6rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+} 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .teamSection {
+    padding: 80px 24px;
+  }
+
+  .teamGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .teamCard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 36px 28px;
+    border-radius: 20px;
+    min-height: 260px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    border: 1.5px solid rgba(0,0,0,0.09);
+    gap: 28px;
+    background: #fff;
+    position: relative;
+  }
+
+  .memberImageContainer {
+    width: 110px;
+    height: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    border-radius: 50%;
+    border: 2.5px solid rgba(0,0,0,0.10);
+    margin-bottom: 0;
+    margin-right: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .memberImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .cardContent {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .memberName {
+    font-size: 1.45rem;
+    margin-bottom: 2px;
+    font-weight: 700;
+    color: #181818;
+  }
+
+  .memberRoleText {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 500;
+  }
+
+  .memberDivider {
+    width: 50px;
+    height: 2px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #000, transparent);
+  }
+
+  .memberDescription {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .memberExpertise {
+    margin-bottom: 8px;
+  }
+
+  .expertiseList {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .expertiseTag {
+    font-size: 0.92rem;
+    padding: 6px 14px;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.09);
+  }
+
+  .memberQuote {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+    border-left: 2px solid #eee;
+    padding-left: 14px;
+    margin: 0;
+    margin-top: 8px;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .cardDecorations {
+    display: none;
+  }
+
+  /* Show education and achievements in tablet view */
+  .memberEducation {
+    font-size: 0.98rem;
+    color: #666;
+    margin-bottom: 6px;
+    font-style: italic;
+    display: block;
+  }
+  .memberAchievements {
+    font-size: 0.92rem;
+    color: #333;
+    margin-bottom: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .achievementTag {
+    background: #f3f3f3;
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    color: #222;
+    border: 1px solid #e0e0e0;
+  }
+} 
+
+@media (max-width: 1023px) {
+  /* Remove hover effects for stat cards */
+  .statItem:hover {
+    transform: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(26, 26, 26, 0.08) !important;
+  }
+  .statItem:hover::before {
+    transform: scaleX(0) !important;
+  }
+
+  /* Remove hover effects for collaboration images */
+  .collaborationImage:hover img {
+    transform: none !important;
+  }
+
+  /* Remove hover effects for expertise tags, team cards, etc. */
+  .expertiseTag:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .teamCard:hover {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    transform: none !important;
+  }
+  .teamCard:hover .cornerDecoration {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    transform: none !important;
+  }
+  .teamCard:hover .sideDecoration {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2), transparent) !important;
+    height: 60px !important;
+  }
+  .achievementCard:hover {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  }
+} 

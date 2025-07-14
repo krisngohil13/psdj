@@ -1,0 +1,490 @@
+.section {
+  padding: 6rem 0;
+  background: #f8f9fa;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Z-index layers */
+.particleContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0; /* Ensure particles are behind other content */
+}
+
+.backgroundShapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0; /* Ensure shapes are behind other content */
+  overflow: hidden;
+}
+
+.sectionHeader {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  /* font-family: "Playfair Display", serif; */
+  color: #0A0A0A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+
+.sectionSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(10, 10, 10, 0.6);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.projectsContainer {
+  position: relative;
+  z-index: 4;
+}
+
+/* Particle Styles */
+.particle {
+  position: absolute;
+  background: rgba(33, 37, 41, 0.15); /* Using Bootstrap's dark color */
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(33, 37, 41, 0.1);
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  25% { transform: translate(10vw, 10vh) scale(1.2); opacity: 0.6; }
+  50% { transform: translate(0, 20vh) scale(1); opacity: 0.3; }
+  75% { transform: translate(-10vw, 10vh) scale(0.8); opacity: 0.6; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+}
+
+/* Background Shapes - Inspired by Hero */
+.shapeOne { /* Large Circle */
+  position: absolute;
+  right: -10vw;
+  top: 5vh;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background-color: rgba(33, 37, 41, 0.03);
+  opacity: 0.6;
+}
+
+.shapeTwo { /* Large Square */
+  position: absolute;
+  left: -10vw;
+  bottom: 10vh;
+  width: 35vw;
+  height: 35vw;
+  border: 2px solid rgba(33, 37, 41, 0.05);
+  transform-origin: center;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.4;
+}
+
+.shapeThree { /* Geometric Shape */
+  position: absolute;
+  right: 15%;
+  top: 30%;
+  width: 20vw;
+  height: 20vw;
+  border: 2px solid rgba(33, 37, 41, 0.05);
+  transform-origin: center;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.4;
+}
+
+.shapeFour { /* Gradient Shape */
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 25vw;
+  height: 25vw;
+  background: linear-gradient(45deg, rgba(33, 37, 41, 0.03), rgba(108, 117, 125, 0.03));
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  opacity: 0.5;
+}
+
+/* Floating Elements - Inspired by Hero */
+.floatingCircle {
+  position: absolute;
+  top: 25%;
+  left: 8%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(33, 37, 41, 0.1);
+  opacity: 0.7;
+}
+
+.floatingSquare {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(33, 37, 41, 0.08);
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+
+.floatingTriangle {
+  position: absolute;
+  right: 25%;
+  bottom: 30%;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid rgba(33, 37, 41, 0.1);
+  opacity: 0.7;
+}
+
+.floatingDots {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at center, rgba(33, 37, 41, 0.1) 1.5px, transparent 1.5px),
+              radial-gradient(circle at center, rgba(33, 37, 41, 0.1) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  opacity: 0.5;
+}
+
+.floatingLine {
+  position: absolute;
+  right: 30%;
+  top: 20%;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, 
+    transparent,
+    rgba(33, 37, 41, 0.1),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* Stroke Shapes */
+.shapeStrokeCircle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.shapeStrokeSquare {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgba(33, 37, 41, 0.1);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Project Card Styles */
+.projectCard {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 2rem; Add some space between cards */
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+
+.projectCard.even .cardContent {
+  flex-direction: row;
+}
+
+.projectCard.odd .cardContent {
+  flex-direction: row-reverse;
+}
+
+/* Image Styles */
+.imageWrapper {
+  position: relative;
+  /* left: 10%; */
+  width: 50%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.imageParallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; /* Make it slightly taller to allow for scrolling */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* This creates the parallax effect */
+}
+
+/* .imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(248, 245, 241, 0.8) 0%,
+    rgba(248, 245, 241, 0.4) 50%,
+    rgba(248, 245, 241, 0) 100%
+  );
+  z-index: 2;
+} */
+
+/* .odd .imageOverlay {
+  background: linear-gradient(
+    to left,
+    rgba(248, 245, 241, 0.8) 0%,
+    rgba(248, 245, 241, 0.4) 50%,
+    rgba(248, 245, 241, 0) 100%
+  );
+} */
+
+/* Text Content */
+.textContent {
+  position: relative;
+  width: 40%;
+  padding: 0 2rem;
+  z-index: 4;
+  color: #333;
+}
+
+.categoryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.categoryTag span {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.categoryTag span:first-child {
+  color: #495057;
+}
+
+.year {
+  color: rgba(10, 10, 10, 0.4);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #0a0a0a;
+  font-weight: 400;
+  /* font-family: "Playfair Display", serif; */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.location {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #6c757d;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: #0a0a0a;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: #0A0A0A;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.projectLink:hover {
+  color: #495057;
+}
+
+.projectLink:hover .arrow {
+  transform: translateX(10px);
+}
+
+.arrow {
+  font-size: 1.4rem;
+  color: #495057;
+  transition: transform 0.3s ease;
+}
+
+.exploreMore {
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.exploreLink {
+  color: #0A0A0A;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  border: 1px solid rgba(10, 10, 10, 0.3);
+  transition: all 0.3s ease;
+}
+
+.exploreLink:hover {
+  background: rgba(10, 10, 10, 0.05);
+  color: #495057;
+  border-color: #0A0A0A;
+}
+
+/* Mobile Styles */
+@media only screen and (max-device-width: 1366px) {
+  .imageParallax {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 6rem 0;
+  }
+
+  .cardContent {
+    padding: 0 2rem;
+  }
+
+  .projectCard {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .projectCard {
+    min-height: auto;
+    margin-bottom: 3rem;
+  }
+
+  .cardContent {
+    flex-direction: column !important;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 60vh;
+    order: -1;
+    border-radius: 10px; /* Slightly smaller radius for mobile */
+  }
+
+  .imageParallax {
+    position: relative;
+    height: 100%;
+  }
+
+  .textContent {
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  /* .imageOverlay,
+  .odd .imageOverlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 245, 241, 0) 0%,
+      rgba(248, 245, 241, 0.8) 80%,
+      #F8F5F1 100%
+    );
+  } */
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .imageWrapper {
+    height: 50vh;
+    border-radius: 8px; /* Even smaller radius for small mobile */
+  }
+
+  .textContent {
+    padding: 1rem 0;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .categoryTag {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+} 

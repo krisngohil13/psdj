@@ -1,0 +1,289 @@
+.section {
+  padding: 8rem 4rem;
+  background: #f8f9fa;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Title Section Styles */
+.titleSection {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #333;
+}
+
+.highlightText {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  padding: 0 0.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+}
+
+.underline {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #333;
+  transform-origin: left;
+}
+
+/* Remove old underline circle styles */
+.underlineCircle {
+  display: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+/* Background Shape */
+.backgroundShape {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: #ced4da;
+  right: 0;
+  top: 10%;
+  z-index: 1;
+  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Particles Container */
+.particlesContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: #212529;
+  border-radius: 50%;
+}
+
+/* Generate different sizes and positions for particles */
+.particle1 { width: 8px; height: 8px; top: 20%; left: 10%; }
+.particle2 { width: 12px; height: 12px; top: 30%; right: 15%; }
+.particle3 { width: 6px; height: 6px; top: 50%; left: 20%; }
+.particle4 { width: 10px; height: 10px; bottom: 30%; right: 25%; }
+.particle5 { width: 15px; height: 15px; top: 15%; right: 30%; }
+.particle6 { width: 8px; height: 8px; bottom: 25%; left: 35%; }
+.particle7 { width: 12px; height: 12px; top: 40%; right: 40%; }
+.particle8 { width: 7px; height: 7px; bottom: 40%; left: 15%; }
+.particle9 { width: 9px; height: 9px; top: 60%; right: 20%; }
+.particle10 { width: 11px; height: 11px; bottom: 20%; left: 25%; }
+.particle11 { width: 6px; height: 6px; top: 70%; right: 35%; }
+.particle12 { width: 14px; height: 14px; bottom: 35%; left: 30%; }
+.particle13 { width: 8px; height: 8px; top: 45%; right: 45%; }
+.particle14 { width: 10px; height: 10px; bottom: 45%; left: 40%; }
+.particle15 { width: 13px; height: 13px; top: 25%; left: 45%; }
+
+.imageWrapper {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  z-index: 3;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  background: #E5DED5;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textContainer {
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.quoteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quote {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #333;
+}
+
+.author {
+  margin-top: 1rem;
+}
+
+.author h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.author p {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.expertiseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.expertiseLink:hover {
+  color: #6c757d;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.expertiseLink:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Update hover effects for just two shapes */
+.imageContainer:hover .shape1 {
+  transform: translate(-8%, -3%);
+}
+
+.imageContainer:hover .shape2 {
+  transform: translate(3%, 8%);
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 992px) {
+  .section {
+    padding: 6rem 2rem;
+    gap: 4rem;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+
+  .container {
+    gap: 3rem;
+  }
+
+  .quote {
+    font-size: 2rem;
+  }
+
+  .imageContainer {
+    padding: 1.5rem;
+  }
+
+  .backgroundShape {
+    width: 85%;
+    height: 50%;
+  }
+
+  .particle {
+    opacity: 0.1;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+    min-height: auto;
+    gap: 3rem;
+  }
+
+  .titleSection {
+    padding: 0 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .imageContainer {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .backgroundShape {
+    width: 90%;
+    height: 85%;
+  }
+
+  .textContainer {
+    padding: 0;
+  }
+
+  .quote {
+    font-size: 1.75rem;
+  }
+
+  .author h3 {
+    font-size: 1.1rem;
+  }
+
+  .author p {
+    font-size: 0.9rem;
+  }
+
+  .expertiseLink {
+    font-size: 1rem;
+  }
+
+  .particle {
+    transform: scale(0.8);
+  }
+
+  .underline {
+    bottom: 0px;
+    height: 3px;
+  }
+}
