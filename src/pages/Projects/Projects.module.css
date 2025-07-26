@@ -147,11 +147,12 @@
   margin-top: 0.5rem;
 }
 
-.headerDivider {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(to right, #C28840, transparent);
-  margin: 2rem 0;
+
+
+@keyframes showDivider {
+  to {
+    transform: scaleX(2);
+  }
 }
 
 .headerDescription {
@@ -193,99 +194,8 @@
   border: 1px solid rgba(194, 136, 64, 0.3);
 }
 
-/* Background Shapes and Particles */
-/* .backgroundShapes {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.1;
-  pointer-events: none;
-}
 
-.shape {
-  position: absolute;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  animation: floatShape 20s infinite linear;
-}
 
-.circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 20%;
-  left: 10%;
-  animation-delay: -5s;
-}
-
-.square {
-  width: 80px;
-  height: 80px;
-  right: 15%;
-  top: 40%;
-  transform: rotate(45deg);
-  animation-delay: -10s;
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 86px solid rgba(0, 0, 0, 0.2);
-  border-top: none;
-  left: 25%;
-  bottom: 20%;
-  animation-delay: -15s;
-}
-
-@keyframes floatShape {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(30px, 30px) rotate(120deg);
-  }
-  66% {
-    transform: translate(-20px, 20px) rotate(240deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
-} */
-
-/* Particles */
-/* .particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  animation: float 15s infinite linear;
-}
-
-.particle:nth-child(1) { top: 10%; left: 45%; animation-delay: -2s; }
-.particle:nth-child(2) { top: 40%; right: 35%; animation-delay: -4s; }
-.particle:nth-child(3) { bottom: 30%; left: 25%; animation-delay: -6s; }
-.particle:nth-child(4) { bottom: 10%; right: 15%; animation-delay: -8s; }
-.particle:nth-child(5) { top: 20%; right: 25%; animation-delay: -10s; }
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(20px, -20px);
-  }
-  50% {
-    transform: translate(-20px, -40px);
-  }
-  75% {
-    transform: translate(-40px, -20px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-} */
 
 .categoryNavContainer {
   margin-bottom: 1rem;
@@ -593,63 +503,6 @@
   transform: translateX(0);
 }
 
-/* Quote Section
-.quoteSection {
-  grid-column: span 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  text-align: center;
-  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-  border-radius: 80px 0 80px 0;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.quoteSection::before,
-.quoteSection::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 2px solid rgba(194, 136, 64, 0.2);
-}
-
-.quoteSection::before {
-  top: 20px;
-  right: 20px;
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 20px 0 0;
-}
-
-.quoteSection::after {
-  bottom: 20px;
-  left: 20px;
-  border-right: none;
-  border-top: none;
-  border-radius: 0 0 0 20px;
-}
-
-.quoteText {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #333;
-  line-height: 1.4;
-  max-width: 80%;
-  position: relative;
-}
-
-.quoteText::before {
-  content: '"';
-  position: absolute;
-  top: -40px;
-  left: -20px;
-  font-size: 6rem;
-  color: rgba(194, 136, 64, 0.1);
-  font-family: serif;
-} */
 
 /* Responsive Design */
 @media (max-width: 1200px) {
@@ -856,9 +709,7 @@
     margin: 0 auto;
   }
 
-  .headerDivider {
-    margin: 2rem auto;
-  }
+  
 
   .accentImage {
     max-width: 600px;
@@ -1398,7 +1249,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .col4 {
@@ -1472,7 +1323,7 @@
 
   .cardImageContainer img {
     border-radius: 16px;
-    transition: filter 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .col4 {
@@ -1484,22 +1335,8 @@
   }
 
   @media (hover: hover) {
-    .bounceCard:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-8px);
-    }
-
-    .bounceCard:hover .cardTitle {
-      opacity: 1;
-    }
-
-    .bounceCard:hover .cardImageContainer {
-      transform: translateY(8px);
-    }
-
     .bounceCard:hover .cardImageContainer img {
-      filter: brightness(1.05);
+      transform: scale(1.05);
     }
   }
 }

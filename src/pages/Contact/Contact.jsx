@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion as Motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from './Contact.module.css';
-import contactImage from '../../assets/images/1.jpg';
+import contactImage from '../../assets/images/03_LIVING_03.webp';
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -30,34 +30,7 @@ const Contact = () => {
   const formOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0.9]);
 
   // Create array of particles with different positions
-  const particles = Array.from({ length: 12 }, (_, index) => {
-    const style = {
-      width: `${Math.random() * 10 + 5}px`,
-      height: `${Math.random() * 10 + 5}px`,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 0.5}s`
-    };
-    return (
-      <Motion.div
-        key={index}
-        className={styles.particle}
-        style={style}
-        animate={{
-          y: [0, -30, 0],
-          x: [0, 20, 0],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 8 + index,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: index * 0.5,
-        }}
-      />
-    );
-  });
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -150,8 +123,7 @@ const Contact = () => {
           />
         </Motion.div>
 
-        {/* Animated Particles */}
-        {particles}
+      
       </div>
 
       {/* Hero Section */}

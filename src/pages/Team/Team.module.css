@@ -75,31 +75,42 @@
 }
 
 .imageGrid {
-  position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
+  display: flex;
+  gap: 1.5rem;
+  will-change: transform;
 }
 
 .mainImageContainer {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
+  flex: 2;
   height: 100%;
+  position: relative;
+  will-change: transform;
 }
 
-.smallImagesContainer {
-  display: none;
-}
-
-.mainImage, .smallImage {
+.mainImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  will-change: transform, opacity;
+}
+
+.smallImagesContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+.smallImage {
+  width: 100%;
+  height: calc(50% - 0.75rem);
+  object-fit: cover;
+  border-radius: 12px;
+  will-change: transform, opacity;
 }
 
 /* Tablet (iPad) View */
@@ -138,24 +149,7 @@
   }
 
   .imageGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .mainImageContainer {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-  }
-
-  .smallImagesContainer {
-    display: grid;
-    grid-column: 2;
-    grid-row: 1 / 3;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    height: 100%;
+    height: 500px;
   }
 }
 
@@ -167,6 +161,38 @@
 
   .heroRight {
     height: 600px;
+  }
+
+  .imageGrid {
+    height: 600px;
+  }
+}
+
+/* iPad/Tablet View */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroRight {
+    height: 400px;
+  }
+
+  .imageGrid {
+    height: 400px;
+  }
+
+  .mainImageContainer {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .mainImage {
+    border-radius: 12px;
+  }
+
+  .smallImagesContainer {
+    gap: 1rem;
+  }
+
+  .smallImage {
+    border-radius: 12px;
   }
 }
 
@@ -354,11 +380,20 @@
 }
 
 .memberDivider {
-  width: 60px;
+  width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, #000, transparent);
+  background: #6c757d;
   margin-bottom: 20px;
+  transform: scaleX(0);
   transform-origin: left;
+  transition: transform 0.8s ease;
+  animation: showMemberDivider 1s ease 0.5s forwards;
+}
+
+@keyframes showMemberDivider {
+  to {
+    transform: scaleX(2);
+  }
 }
 
 .memberDescription {
@@ -436,20 +471,6 @@
   transform: scale(1.1);
 }
 
-.sideDecoration {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 2px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2), transparent);
-  transition: all 0.3s ease;
-}
-
-.teamCard:hover .sideDecoration {
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4), transparent);
-  height: 80px;
-}
 
 /* Updated Collaboration Section */
 .collaborationSection {
@@ -526,7 +547,17 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, transparent, #1a1a1a, transparent);
+  background: #6c757d;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease;
+  animation: showCollaborationLine 1s ease 0.5s forwards;
+}
+
+@keyframes showCollaborationLine {
+  to {
+    transform: scaleY(1);
+  }
 }
 
 .collaborationText h3 {
@@ -642,11 +673,12 @@
   border-radius: 24px;
   padding: 40px 30px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   overflow: hidden;
   box-shadow: 
     0 4px 6px rgba(0, 0, 0, 0.02),
     0 10px 30px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
 }
 
 .statItem::before {
@@ -655,22 +687,40 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
   transform: scaleX(0);
-  transition: transform 0.4s ease;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.statItem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.02) 0%, rgba(74, 74, 74, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
 }
 
 .statItem:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px) scale(1.02);
   box-shadow: 
-    0 8px 12px rgba(0, 0, 0, 0.04),
-    0 20px 40px rgba(0, 0, 0, 0.08);
-  border-color: rgba(26, 26, 26, 0.15);
+    0 12px 24px rgba(0, 0, 0, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.12);
+  border-color: rgba(26, 26, 26, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
 }
 
 .statItem:hover::before {
   transform: scaleX(1);
+}
+
+.statItem:hover::after {
+  opacity: 1;
 }
 
 .statNumber {
@@ -683,6 +733,16 @@
   margin-bottom: 12px;
   line-height: 1;
   letter-spacing: -0.02em;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.statItem:hover .statNumber {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.05);
 }
 
 .statItem p {
@@ -692,6 +752,14 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.statItem:hover p {
+  color: #333;
+  transform: translateY(-2px);
 }
 
 /* Individual stat styling */
@@ -948,10 +1016,19 @@
   position: absolute;
   bottom: -20px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: left;
+  width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+  background: #6c757d;
+  transition: transform 0.8s ease;
+  animation: showDivider 1s ease 0.5s forwards;
+}
+
+@keyframes showDivider {
+  to {
+    transform: translateX(-50%) scaleX(2);
+  }
 }
 
 .sectionLabel {
@@ -1053,10 +1130,19 @@
   position: absolute;
   top: -30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
   width: 2px;
   height: 30px;
-  background: linear-gradient(to bottom, transparent, #1a1a1a);
+  background: #6c757d;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: showBranchLine 1.5s ease 1s forwards;
+}
+
+@keyframes showBranchLine {
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
 }
 
 /* Branch Nodes */
@@ -1080,10 +1166,19 @@
   position: absolute;
   bottom: -20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
   width: 1px;
   height: 20px;
-  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.3), transparent);
+  background: #6c757d;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: showBranchNodeLine 1.5s ease 1.2s forwards;
+}
+
+@keyframes showBranchNodeLine {
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
 }
 
 .branchIcon {
@@ -1227,7 +1322,7 @@
 @media (max-width: 767px) {
   .heroSection {
     min-height: 80vh;
-    padding: 72px 20px 40px 20px; /* Added top padding for header */
+    padding: 90px 20px 40px 20px; /* Added top padding for header */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -1291,19 +1386,39 @@
   }
 
   .imageGrid {
-    gap: 6px;
+    aspect-ratio: 16/9;
+    height: auto;
+    position: relative;
   }
 
   .mainImageContainer {
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    position: relative;
-    margin-top: 10px;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
 
-  .mainImage, .smallImage {
-    border-radius: 16px;
+  .mainImage {
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .smallImagesContainer {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    width: 35%;
+    aspect-ratio: 1/1;
+    z-index: 2;
+    background: #000;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+
+  .smallImage {
+    height: calc(50% - 0.25rem);
+    border-radius: 4px;
   }
 
   /* Add decorative elements for mobile */
@@ -1405,9 +1520,14 @@
   }
 
   .memberDivider {
-    width: 40px;
+    width: 30px;
     height: 2px;
+    background: #6c757d;
     margin-bottom: 12px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease;
+    animation: showMemberDivider 1s ease 0.5s forwards;
   }
 
   .memberDescription {
@@ -1629,10 +1749,14 @@
   }
 
   .memberDivider {
-    width: 50px;
+    width: 30px;
     height: 2px;
+    background: #6c757d;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, #000, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease;
+    animation: showMemberDivider 1s ease 0.5s forwards;
   }
 
   .memberDescription {
@@ -1732,10 +1856,7 @@
     border-color: rgba(0, 0, 0, 0.1) !important;
     transform: none !important;
   }
-  .teamCard:hover .sideDecoration {
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2), transparent) !important;
-    height: 60px !important;
-  }
+
   .achievementCard:hover {
     transform: none !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;

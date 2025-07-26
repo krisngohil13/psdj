@@ -1,0 +1,1129 @@
+.projectDetailPage {
+  background: #111;
+  color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.heroSection {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: #181818;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  will-change: transform;
+  transition: filter 0.5s cubic-bezier(.77,0,.18,1);
+  filter: brightness(0.7) grayscale(0.1);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(30,30,30,0.7) 60%, rgba(20,20,20,0.95) 100%);
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  padding: 3rem 2rem 2.5rem 4vw;
+  max-width: 900px;
+}
+
+.projectTitle {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+
+.projectMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.metaItem {
+  background: rgba(255,255,255,0.07);
+  border-radius: 2rem;
+  padding: 0.3rem 1.1rem;
+  margin-right: 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.detailsSection {
+  padding: 3.5rem 6vw 2.5rem 6vw;
+  background: #181818;
+  border-bottom: 1px solid #232323;
+}
+
+/* Project Info Section */
+.projectInfoSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin-bottom: 2.5rem;
+  background: rgba(30,30,30,0.5);
+  border-radius: 1.2rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08);
+  border: 1px solid #232323;
+}
+
+.narrativeSectionsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Individual Narrative Sections */
+.descriptionSection,
+.challengeSection,
+.solutionSection,
+.resultsSection {
+  background: rgba(30,30,30,0.7);
+  border-radius: 1.2rem;
+  padding: 1.7rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08);
+  border: 1px solid #232323;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+
+.descriptionSection {
+  border-left: 4px solid #6ec1e4;
+}
+.challengeSection {
+  border-left: 4px solid #f7b731;
+}
+.solutionSection {
+  border-left: 4px solid #20bf6b;
+}
+.resultsSection {
+  border-left: 4px solid #eb3b5a;
+}
+
+.narrativeHeading {
+  font-size: 1.08rem;
+  color: #bdbdbd;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.narrativeText {
+  color: #f8f9fa;
+  font-size: 1.05rem;
+  opacity: 0.93;
+  font-weight: 400;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.detailsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailsHeading {
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.detailsText {
+  font-size: 1.05rem;
+  color: #f8f9fa;
+  opacity: 0.92;
+  font-weight: 400;
+}
+
+.servicesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.narrativeSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin-top: 1.5rem;
+}
+
+.narrativeBlock {
+  background: rgba(30,30,30,0.7);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08);
+  border: 1px solid #232323;
+}
+
+.gallerySection {
+  padding: 3.5rem 6vw 4rem 6vw;
+  background: #111;
+}
+
+.galleryHeading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.parallaxGalleryStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.parallaxImageBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.parallaxImageWrap {
+  width: 100%;
+  max-width: 900px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+  background: #232323;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+.parallaxImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+  filter: brightness(0.92) grayscale(0.08);
+}
+
+.parallaxOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(30,30,30,0.7) 60%, rgba(20,20,20,0.95) 100%);
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+.parallaxCategory {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 1.1rem;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.98rem;
+  padding: 0.25rem 1.1rem;
+  border-radius: 1.2rem;
+  z-index: 3;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  font-weight: 500;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+.parallaxTextBlock {
+  max-width: 900px;
+  width: 100%;
+  padding: 1.2rem 0 0 0;
+  color: #fff;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.parallaxCaption {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.parallaxDescription {
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  opacity: 0.92;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.notFound {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* --- Clean, Modern White Theme Details Section (Zig-Zag) --- */
+
+.detailsSectionWhite {
+  background: #fff;
+  color: #181818;
+  padding: 2rem 0 3rem 0;
+  border-radius: 0 0 2.5rem 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.06);
+  margin-bottom: 3rem;
+}
+
+.projectInfoSectionWhite {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin: 0 auto 3rem auto;
+  background: #f7f7f7;
+  border-radius: 1.2rem;
+  padding: 2rem 2vw;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.04);
+  border: 1px solid #ececec;
+  max-width: 1100px;
+}
+
+.detailsBlockWhite {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.detailsHeadingWhite {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.detailsTextWhite {
+  font-size: 1.08rem;
+  color: #222;
+  opacity: 0.95;
+  font-weight: 500;
+}
+.servicesListWhite {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #444;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Narrative Sections - Styled like SelectedProjects */
+.narrativeSectionsContainer {
+  position: relative;
+  z-index: 4;
+}
+
+.narrativeCard {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.narrativeCardContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+
+.evenNarrative .narrativeCardContent {
+  flex-direction: row;
+}
+
+.oddNarrative .narrativeCardContent {
+  flex-direction: row-reverse;
+}
+
+.narrativeImageWrapper {
+  position: relative;
+  width: 50%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.narrativeImageParallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.narrativeTextContent {
+  position: relative;
+  width: 40%;
+  padding: 0 2rem;
+  z-index: 4;
+  color: #333;
+}
+
+.narrativeCategoryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.narrativeCategoryTag span {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #495057;
+}
+
+.narrativeTitle {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #0a0a0a;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.narrativeDescription {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: #0a0a0a;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .narrativeImageParallax {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .narrativeCard {
+    height: auto;
+    min-height: 70vh;
+  }
+  .narrativeCardContent {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .detailsSectionWhite {
+    padding: 2.2rem 0 1.5rem 0;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+  .projectInfoSectionWhite {
+    grid-template-columns: 1fr;
+    padding: 1.2rem 2vw;
+    gap: 1.2rem;
+  }
+  .narrativeCard {
+    min-height: auto;
+    margin-bottom: 3rem;
+  }
+  .narrativeCardContent {
+    flex-direction: column !important;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .narrativeImageWrapper {
+    width: 100%;
+    height: 60vh;
+    order: -1;
+    border-radius: 10px;
+  }
+  .narrativeImageParallax {
+    position: relative;
+    height: 100%;
+  }
+  .narrativeTextContent {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detailsSectionWhite {
+    padding: 1.2rem 0 0.7rem 0;
+  }
+  .narrativeCardContent {
+    padding: 1rem;
+  }
+  .narrativeImageWrapper {
+    height: 50vh;
+    border-radius: 8px;
+  }
+  .narrativeTextContent {
+    padding: 1rem 0;
+  }
+  .narrativeTitle {
+    margin-bottom: 1.5rem;
+  }
+  .narrativeDescription {
+    margin-bottom: 2rem;
+  }
+  .narrativeCategoryTag {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+} 
+
+/* --- Modern Gallery Section for ProjectDetail (matches SelectedProjects style) --- */
+
+.gallerySectionModern {
+  padding: 6rem 0;
+  background: #f8f9fa;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.sectionHeaderModern {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+}
+
+.sectionTitleModern {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #0A0A0A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sectionSubtitleModern {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(10, 10, 10, 0.6);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.projectsContainerModern {
+  position: relative;
+  z-index: 4;
+}
+
+.projectCardModern {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.cardContentModern {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+
+.evenModern .cardContentModern {
+  flex-direction: row;
+}
+
+.oddModern .cardContentModern {
+  flex-direction: row-reverse;
+}
+
+.imageWrapperModern {
+  position: relative;
+  width: 50%;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.imageParallaxModern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.textContentModern {
+  position: relative;
+  width: 40%;
+  padding: 0 2rem;
+  z-index: 4;
+  color: #333;
+}
+
+.categoryTagModern {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.categoryTagModern span {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #495057;
+}
+
+.titleModern {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #0a0a0a;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.descriptionModern {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: #0a0a0a;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .imageParallaxModern {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .gallerySectionModern {
+    padding: 6rem 0;
+  }
+  .cardContentModern {
+    padding: 0 2rem;
+  }
+  .projectCardModern {
+    height: auto;
+    min-height: 70vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallerySectionModern {
+    padding: 4rem 0;
+  }
+  .sectionHeaderModern {
+    margin-bottom: 2rem;
+  }
+  .projectCardModern {
+    min-height: auto;
+    margin-bottom: 3rem;
+  }
+  .cardContentModern {
+    flex-direction: column !important;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .imageWrapperModern {
+    width: 100%;
+    height: 60vh;
+    order: -1;
+    border-radius: 10px;
+  }
+  .imageParallaxModern {
+    position: relative;
+    height: 100%;
+  }
+  .textContentModern {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallerySectionModern {
+    padding: 3rem 0;
+  }
+  .cardContentModern {
+    padding: 1rem;
+  }
+  .imageWrapperModern {
+    height: 50vh;
+    border-radius: 8px;
+  }
+  .textContentModern {
+    padding: 1rem 0;
+  }
+  .titleModern {
+    margin-bottom: 1.5rem;
+  }
+  .descriptionModern {
+    margin-bottom: 2rem;
+  }
+  .categoryTagModern {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+} 
+
+/* --- Modern Gallery Image Grid Section for ProjectDetail --- */
+
+.gallerySectionGrid {
+  border-radius: 2.5rem 2.5rem;
+  padding: 6rem 0;
+  background: #f8f9fa;
+  min-height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.galleryGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.galleryGridItem {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryGridImage {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+
+.galleryGridItem:hover .galleryGridImage {
+  transform: scale(1.04) translateY(-6px);
+}
+
+.galleryGridOverlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 80%, rgba(0,0,0,0) 100%);
+  color: #fff;
+  padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.galleryGridCategory {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.galleryGridCaption {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.galleryGridDescription {
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+@media (max-width: 1024px) {
+  .galleryGridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .galleryGridContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .galleryGridImage {
+    aspect-ratio: 16/10;
+  }
+  .galleryGridOverlay {
+    padding: 0.8rem 1rem 1rem 1rem;
+  }
+  .galleryGridCaption {
+    font-size: 1.1rem;
+  }
+  .galleryGridDescription {
+    font-size: 0.98rem;
+  }
+} 
+
+/* --- Black & White Text-Only Project Info Section (White Text on Dark) --- */
+
+.projectInfoSectionBW {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  margin: 0 auto 3rem auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2rem;
+  background: #181818;
+  padding: 2rem 2vw;
+  border-radius: 1.2rem;
+}
+
+.projectInfoItemBW {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  margin-bottom: 0.5rem;
+}
+
+.projectInfoLabelBW {
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.projectInfoValueBW {
+  font-size: 1.13rem;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.1rem;
+}
+
+.projectInfoServicesListBW {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.projectInfoServicesListBW li {
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+  .projectInfoSectionBW {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem 2vw;
+  }
+  .projectInfoItemBW {
+    min-width: 0;
+    width: 100%;
+  }
+  .projectInfoServicesListBW {
+    gap: 0.4rem;
+  }
+} 
+
+/* --- Modern Uniform Gallery Grid for Project Visuals (4 cards per row, vertical rectangles) --- */
+
+.galleryMasonryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+.galleryMasonryItem {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  background: #fff;
+}
+
+.galleryMasonryImage {
+  width: 100%;
+  aspect-ratio: 3/4;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.4s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+  cursor: pointer;
+}
+
+.galleryMasonryItem:hover .galleryMasonryImage {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.galleryMasonryOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(10,10,10,0.88) 60%, rgba(10,10,10,0.45) 100%);
+  color: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: opacity 0.35s cubic-bezier(.77,0,.18,1);
+}
+
+.galleryMasonryItem:hover .galleryMasonryOverlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.galleryMasonryCategory {
+  font-size: 1rem;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.92;
+}
+
+.galleryMasonryCaption {
+  font-size: 1.35rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.galleryMasonryDescription {
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  opacity: 0.97;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 1024px) {
+  .galleryMasonryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .galleryMasonryGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .galleryMasonryImage {
+    aspect-ratio: 16/10;
+  }
+  .galleryMasonryOverlay {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .galleryMasonryCaption {
+    font-size: 1.1rem;
+  }
+  .galleryMasonryDescription {
+    font-size: 0.98rem;
+  }
+} 
+
+/* --- Full Screen Hero Section --- */
+.heroSectionFull {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: #181818;
+}
+
+.heroContentLarge {
+  position: relative;
+  z-index: 3;
+  padding: 4rem 2rem 4rem 6vw;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.projectTitleLarge {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 32px rgba(0,0,0,0.25);
+  line-height: 1.1;
+}
+
+.projectMetaLarge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+  color: #e0e0e0;
+  opacity: 0.92;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .heroSectionFull {
+    min-height: 320px;
+    height: 60vh;
+  }
+  .heroContentLarge {
+    padding: 2.2rem 1.2rem 2rem 1.2rem;
+    max-width: 100vw;
+  }
+  .projectTitleLarge {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .projectMetaLarge {
+    font-size: 1.1rem;
+    gap: 1rem;
+  }
+}
+
+/* --- Details Section Title (Elegant Interior Design Style) --- */
+.detailsSectionTitle {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  opacity: 0.9;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .detailsSectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}

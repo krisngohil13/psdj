@@ -1,7 +1,13 @@
 import React, { useRef } from 'react';
 import { motion as Motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from './Expertise.module.css';
-import projectImage from '../../assets/images/1.jpg';
+import projectImage from '../../assets/images/41.webp';
+import projectImage2 from '../../assets/images/32.webp';
+import projectImage3 from '../../assets/images/18.webp';
+import projectImage4 from '../../assets/images/07.webp';
+import projectImage5 from '../../assets/images/03_LIVING_03.webp';
+import projectImage6 from '../../assets/images/3.webp';
+import projectImage7 from '../../assets/images/44.webp';
 import { FaLightbulb, FaHandshake, FaChartLine, FaCrown } from 'react-icons/fa';
 
 const Expertise = () => {
@@ -31,33 +37,7 @@ const Expertise = () => {
 
   return (
     <div ref={containerRef} className={styles.expertisePage}>
-      {/* <div className={styles.headerSection}>
-        <div className={styles.headerOverlay}></div>
-        <div className={styles.decorativeElements}>
-          <div className={styles.decorativeLine}></div>
-          <div className={styles.decorativeCircle}></div>
-          <div className={styles.decorativeSquare}></div>
-          <div className={styles.decorativePattern}></div>
-        </div>
-        <div className={styles.headerContent}>
-          <div className={styles.titleWrapper}>
-            <span className={styles.subTitle}>Our Expertise</span>
-            <h1 className={styles.mainTitle}>
-              <span className={styles.titleLight}>Exceptional design</span>
-              <span className={styles.titleBold}>is something you feel</span>
-            </h1>
-            <div className={styles.headerDivider}></div>
-            <p className={styles.headerDescription}>
-              Each project in our portfolio represents a unique blend of artistry and functionality, 
-              showcasing our commitment to creating spaces that inspire and endure.
-            </p>
-          </div>
-          <div className={styles.accentImage}>
-            <img src={projectImage} alt="Interior Design" />
-            <div className={styles.accentOverlay}></div>
-          </div>
-        </div>
-      </div> */}
+     
 
       {/* Parallax Background Pattern */}
       <Motion.div 
@@ -75,14 +55,7 @@ const Expertise = () => {
             className={styles.heroText}
             style={{ y: titleY }}
           >
-            {/* <Motion.span 
-              className={styles.heroLabel}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Our Expertise
-            </Motion.span> */}
+           
           <Motion.h1 
             className={styles.mainTitle}
               initial={{ opacity: 0, y: 30 }}
@@ -188,7 +161,7 @@ const Expertise = () => {
               {
                 title: "Design Excellence",
                 description: "Crafting interiors that harmonize beauty and purpose, with meticulous attention to every detail.",
-                image: projectImage,
+                image: projectImage2,
                 stats: {
                   projects: "200+",
                   satisfaction: "99%"
@@ -197,7 +170,7 @@ const Expertise = () => {
               {
                 title: "Innovative Solutions",
                 description: "Delivering transformative designs through sustainable materials and forward-thinking concepts.",
-                image: projectImage,
+                image: projectImage3,
                 stats: {
                   innovations: "40+",
                   awards: "18"
@@ -206,7 +179,7 @@ const Expertise = () => {
               {
                 title: "Client Focus",
                 description: "Building lasting relationships by listening deeply and translating visions into remarkable spaces.",
-                image: projectImage,
+                image: projectImage4,
                 stats: {
                   clients: "300+",
                   retention: "97%"
@@ -269,7 +242,7 @@ const Expertise = () => {
               step: "01",
               title: "Residential Design",
               description: "Creating luxurious living spaces that reflect your personality and enhance your lifestyle.",
-              image: projectImage,
+              image: projectImage5,
               stats: {
                 homes: "150+",
                 satisfaction: "99%"
@@ -279,7 +252,7 @@ const Expertise = () => {
               step: "02",
               title: "Commercial Spaces",
               description: "Designing productive and inspiring workplaces that embody your brand's vision.",
-              image: projectImage,
+              image: projectImage6,
               stats: {
                 offices: "100+",
                 sqft: "1M+"
@@ -289,7 +262,7 @@ const Expertise = () => {
               step: "03",
               title: "Hospitality Design",
               description: "Crafting immersive experiences through thoughtful space planning and ambiance.",
-              image: projectImage,
+              image: projectImage7,
               stats: {
                 hotels: "50+",
                 rating: "4.9"

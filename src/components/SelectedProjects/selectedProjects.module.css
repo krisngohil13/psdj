@@ -6,6 +6,22 @@
   position: relative;
 }
 
+/* Background Pattern */
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: 
+    linear-gradient(90deg, transparent 95%, rgba(193, 192, 192, 0.1) 95%),
+    linear-gradient(transparent 95%, rgba(131, 131, 131, 0.1) 95%);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Z-index layers */
 .particleContainer {
   position: absolute;
@@ -405,7 +421,7 @@
 
   .projectCard {
     height: auto;
-    min-height: 100vh;
+    min-height: 70vh;
   }
 }
 

@@ -46,20 +46,13 @@ const Hero = () => {
   // Transform values for scroll effects
   const titleScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.85]);
   const titleOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.6]);
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
   return (
     <section 
       ref={containerRef}
       className={styles.hero}
     >
-      {/* Background pattern with parallax effect */}
-      <Motion.div 
-        className={styles.backgroundPattern}
-        style={{ y: backgroundY }}
-      >
-        <div className={styles.dotPattern}></div>
-      </Motion.div>
+
 
       {/* Main content */}
       <Motion.div 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './SocialGrid.module.css';
-import interiorImage from '../../assets/images/1.jpg';
+import interiorImage1 from '../../assets/images/18.webp';
+import interiorImage2 from '../../assets/images/03_LIVING_03.webp';
 
 const SocialGrid = () => {
   const socialLinks = [
@@ -8,6 +9,7 @@ const SocialGrid = () => {
       platform: 'Instagram',
       url: 'https://www.instagram.com/psdj_interior_architecture/profilecard/?igsh=amtxODM5anIxbHBj',
       color: '#f8f9fa',
+      image: interiorImage1,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -20,6 +22,7 @@ const SocialGrid = () => {
       platform: 'LinkedIn',
       url: 'https://www.linkedin.com/company/psdj-interior-architecture/',
       color: '#f8f9fa',
+      image: interiorImage2,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -52,7 +55,7 @@ const SocialGrid = () => {
             >
               <div className={styles.itemContent}>
                 <div className={styles.imageContainer}>
-                  <img src={interiorImage} alt={`PSDJ Interior on ${social.platform}`} className={styles.backgroundImage} />
+                  <img src={social.image} alt={`PSDJ Interior on ${social.platform}`} className={styles.backgroundImage} />
                   <div className={styles.overlay}></div>
                 </div>
                 <div className={styles.platformInfo}>

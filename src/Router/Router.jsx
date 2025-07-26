@@ -6,8 +6,12 @@ import ProjectDetail from '../pages/Projects/ProjectDetail';
 import Expertise from '../pages/Expertise/Expertise';
 import Contact from '../pages/Contact/Contact';
 import Team from '../pages/Team/Team';
+import useScrollToTop from '../lib/useScrollToTop';
 
 const Router = () => {
+    // Use the scroll to top hook
+    useScrollToTop();
+    
     return (
         <Routes>
             <Route path="/" element={<Home />} />

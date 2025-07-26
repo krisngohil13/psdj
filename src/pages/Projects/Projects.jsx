@@ -2,7 +2,14 @@ import React, { useState, useRef } from 'react';
 import { motion as Motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import styles from './Projects.module.css';
-import projectImage from '../../assets/images/1.jpg';
+import projectImage3 from '../../assets/images/3.webp';
+import projectImage from '../../assets/images/6.webp';
+import projectImage2 from '../../assets/images/41.webp';
+import projectImage4 from '../../assets/images/32.webp';
+import projectImage5 from '../../assets/images/44.webp';
+import projectImage6 from '../../assets/images/41.webp';
+import projectImage7 from '../../assets/images/18.webp';
+import projectImage8 from '../../assets/images/32.webp';
 import { projectsData } from './projectsData';
 
 const Projects = () => {
@@ -20,7 +27,7 @@ const Projects = () => {
 
   const categories = [
     {
-      id: 'residential',
+      id: 'Residential',
       title: 'Residential',
       subCategories: [
         { id: 'exclusive-homes', title: 'Exclusive Homes' },
@@ -30,8 +37,13 @@ const Projects = () => {
       ]
     },
     {
-      id: 'hospitality-commercial',
-      title: 'Hospitality & Commercial',
+      id: 'Hospitality',
+      title: 'Hospitality',
+      subCategories: []
+    },
+    {
+      id: 'Commercial',
+      title: 'Commercial',
       subCategories: []
     }
   ];
@@ -41,31 +53,31 @@ const Projects = () => {
       id: 'text1',
       title: 'Crafting Luxurious Spaces',
       description: 'Every project is thoughtfully designed to capture the essence of our clients\' aspirations, blending sophistication with practical living solutions.',
-      shape: 'shape2'
+      shape: 'shape1'
     },
     {
       id: 'text2',
       title: 'Attention to Detail',
       description: 'Our philosophy embraces the art of precision, where every texture, material, and finish contributes to a cohesive, refined environment.',
-      shape: 'shape2'
+      shape: 'shape1'
     },
     {
       id: 'text3',
       title: 'Timeless Design',
       description: 'We curate interiors that transcend trends, marrying classic influences with modern sensibilities to create lasting impressions.',
-      shape: 'shape2'
+      shape: 'shape1'
     },
     {
       id: 'text4',
       title: 'Sustainable Living',
       description: 'From eco-friendly materials to energy-efficient solutions, our designs promote a healthier, more responsible approach to luxury interiors.',
-      shape: 'shape2'
+      shape: 'shape1'
     },
     {
       id: 'text5',
       title: 'Personalized Experience',
       description: 'Collaboration is at the heart of our process, ensuring each space reflects the distinct tastes and lifestyle of those who inhabit it.',
-      shape: 'shape2'
+      shape: 'shape1'
     }
   ];
 
@@ -86,8 +98,8 @@ const Projects = () => {
     if (activeSubCategory) {
       return projectsData.filter(project => project.category === activeSubCategory);
     }
-    if (activeMainCategory === 'hospitality-commercial') {
-      return projectsData.filter(project => project.category === 'hospitality-commercial');
+    if (activeMainCategory === 'Hospitality') {
+      return projectsData.filter(project => project.category === 'Hospitality');
     }
     return projectsData.filter(project => {
       const category = categories.find(cat => cat.id === activeMainCategory);
@@ -180,13 +192,12 @@ const Projects = () => {
 
   const BounceCard = ({ className, children, onClick }) => {
     return (
-      <Motion.div
-        whileHover={{ scale: 0.95, rotate: "-1deg" }}
+      <div
         className={`${styles.bounceCard} ${className}`}
         onClick={onClick}
       >
         {children}
-      </Motion.div>
+      </div>
     );
   };
 
@@ -243,10 +254,10 @@ const Projects = () => {
             transition={{ duration: 0.8}}
           >
             <div className={styles.mainImageContainer}>
-              <img src={projectImage} alt="Featured Project" className={styles.mainImage} />
+              <img src={projectImage2} alt="Featured Project" className={styles.mainImage} />
             </div>
             <div className={styles.smallImagesContainer}>
-              <img src={projectImage} alt="Project Detail" className={styles.smallImage} />
+              <img src={projectImage3} alt="Project Detail" className={styles.smallImage} />
               <img src={projectImage} alt="Project Detail" className={styles.smallImage} />
             </div>
           </Motion.div>
@@ -273,7 +284,7 @@ const Projects = () => {
               </button>
             ))}
           </div>
-          {activeMainCategory !== 'all' && activeMainCategory !== 'hospitality-commercial' && (
+          {activeMainCategory !== 'all' && activeMainCategory !== 'Hospitality' && (
             <div className={styles.subCategories}>
               {categories
                 .find(cat => cat.id === activeMainCategory)
@@ -321,25 +332,25 @@ const Projects = () => {
         >
           <BounceCard 
             className={styles.col4} 
-            onClick={() => projectsData[0] && handleProjectClick(projectsData[0])}
+            onClick={() => navigate('/projects/modern-living-space')}
           >
-            <CardTitle>{projectsData[0]?.title || 'Modern Living Space'}</CardTitle>
+            <CardTitle>Modern Living Space</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[0]?.image || projectImage} 
-                alt={projectsData[0]?.title || 'Modern Living Space'} 
+                src={projectImage4} 
+                alt="Modern Living Space" 
               />
             </div>
           </BounceCard>
           <BounceCard 
             className={styles.col8}
-            onClick={() => projectsData[1] && handleProjectClick(projectsData[1])}
+            onClick={() => navigate('/projects/luxury-villa-design')}
           >
-            <CardTitle>{projectsData[1]?.title || 'Luxury Villa Design'}</CardTitle>
+            <CardTitle>Luxury Villa Design</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[1]?.image || projectImage} 
-                alt={projectsData[1]?.title || 'Luxury Villa Design'} 
+                src={projectImage5} 
+                alt="Luxury Villa Design" 
               />
             </div>
           </BounceCard>
@@ -354,25 +365,25 @@ const Projects = () => {
         >
           <BounceCard 
             className={styles.col8}
-            onClick={() => projectsData[2] && handleProjectClick(projectsData[2])}
+            onClick={() => navigate('/projects/urban-penthouse')}
           >
-            <CardTitle>{projectsData[2]?.title || 'Urban Penthouse'}</CardTitle>
+            <CardTitle>Urban Penthouse</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[2]?.image || projectImage} 
-                alt={projectsData[2]?.title || 'Urban Penthouse'} 
+                src={projectImage6} 
+                alt="Urban Penthouse" 
               />
             </div>
           </BounceCard>
           <BounceCard 
             className={styles.col4}
-            onClick={() => projectsData[3] && handleProjectClick(projectsData[3])}
+            onClick={() => navigate('/projects/heritage-revival')}
           >
-            <CardTitle>{projectsData[3]?.title || 'Heritage Revival'}</CardTitle>
+            <CardTitle>Heritage Revival</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[3]?.image || projectImage} 
-                alt={projectsData[3]?.title || 'Heritage Revival'} 
+                src={projectImage7} 
+                alt="Heritage Revival" 
               />
             </div>
           </BounceCard>
@@ -387,25 +398,25 @@ const Projects = () => {
         >
           <BounceCard 
             className={styles.col4}
-            onClick={() => projectsData[4] && handleProjectClick(projectsData[4])}
+            onClick={() => navigate('/projects/contemporary-studio')}
           >
-            <CardTitle>{projectsData[4]?.title || 'Contemporary Studio'}</CardTitle>
+            <CardTitle>Contemporary Studio</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[4]?.image || projectImage} 
-                alt={projectsData[4]?.title || 'Contemporary Studio'} 
+                src={projectImage8} 
+                alt="Contemporary Studio" 
               />
             </div>
           </BounceCard>
           <BounceCard 
             className={styles.col8}
-            onClick={() => projectsData[5] && handleProjectClick(projectsData[5])}
+            onClick={() => navigate('/projects/minimalist-retreat')}
           >
-            <CardTitle>{projectsData[5]?.title || 'Minimalist Retreat'}</CardTitle>
+            <CardTitle>Minimalist Retreat</CardTitle>
             <div className={styles.cardImageContainer}>
               <img 
-                src={projectsData[5]?.image || projectImage} 
-                alt={projectsData[5]?.title || 'Minimalist Retreat'} 
+                src={projectImage3} 
+                alt="Minimalist Retreat" 
               />
             </div>
           </BounceCard>

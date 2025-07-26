@@ -5,40 +5,7 @@
   overflow: hidden;
 }
 
-/* Inner Shadow Overlay */
-/* .footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(
-    to bottom,
-    rgba(33, 37, 41, 0.05) 0%,
-    rgba(33, 37, 41, 0.02) 40%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
 
-.footer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(33, 37, 41, 0.1) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-} */
 
 .backgroundElements {
   position: absolute;
@@ -64,60 +31,6 @@
   opacity: 0.5;
 }
 
-/* Shapes */
-/* .shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.05;
-  background: #212529;
-}
-
-.shape1 {
-  width: 300px;
-  height: 300px;
-  top: -100px;
-  right: -100px;
-}
-
-.shape2 {
-  width: 200px;
-  height: 200px;
-  bottom: -50px;
-  left: -50px;
-}
-
-.shape3 {
-  width: 150px;
-  height: 150px;
-  top: 30%;
-  left: 20%;
-} */
-
-/* Particles */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: #f8f9fa;
-  animation: floatParticle 20s linear infinite;
-}
-
-@keyframes floatParticle {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(10px, -10px) rotate(90deg);
-  }
-  50% {
-    transform: translate(0, 20px) rotate(180deg);
-  }
-  75% {
-    transform: translate(-10px, -10px) rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
-}
 
 /* Content Styles */
 .footerContent {
@@ -332,9 +245,48 @@
     padding: 4rem 0 2rem;
   }
 
+  .topSection {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .brandSection {
+    text-align: center;
+  }
+
+  .brandSection h3 {
+    font-size: 2rem;
+  }
+
+  .brandSection p {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
   .linksGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+
+  .linkColumn h4,
+  .contactColumn h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .linkColumn a,
+  .contactInfo p {
+    font-size: 0.9rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .socialLink {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .bottomBar {

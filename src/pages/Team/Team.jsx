@@ -1,13 +1,16 @@
 import React, { useRef } from 'react';
 import { motion as Motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from './Team.module.css';
-import projectImage from '../../assets/images/1.jpg';
+import projectImage from '../../assets/images/03_LIVING_03.webp';
+import projectImage2 from '../../assets/images/32.webp';
+import projectImage3 from '../../assets/images/07.webp';
+import projectImage4 from '../../assets/images/44.webp';
 // Import team member images
-import teamImage1 from '../../assets/images/1.jpg';
-import teamImage2 from '../../assets/images/2.png';
-import teamImage3 from '../../assets/images/3.jpg';
-import teamImage4 from '../../assets/images/4.jpg';
-import heroImage from '../../assets/images/hero.png';
+import teamImage1 from '../../assets/images/18.webp';
+import teamImage2 from '../../assets/images/32.webp';
+import teamImage3 from '../../assets/images/3.webp';
+import teamImage4 from '../../assets/images/4.webp';
+import heroImage from '../../assets/images/hero.webp';
 import { 
   RiAwardLine, RiLightbulbLine, RiHeartLine,
   RiShieldStarLine, RiMedalLine, RiHandHeartLine, RiPlantLine
@@ -163,36 +166,32 @@ const Team = () => {
               className={styles.heroRight}
               variants={fadeInUp}
             >
-              <div className={styles.imageGrid}>
+              <Motion.div 
+                className={styles.imageGrid}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <div className={styles.mainImageContainer}>
-                  <Motion.img 
+                  <img 
                     src={projectImage} 
                     alt="Team at work" 
                     className={styles.mainImage}
-                    style={{
-                      scale: useTransform(smoothProgress, [0, 1], [1.1, 1])
-                    }}
                   />
                 </div>
                 <div className={styles.smallImagesContainer}>
-                  <Motion.img 
-                    src={projectImage} 
+                  <img 
+                    src={projectImage2} 
                     alt="Design discussion" 
                     className={styles.smallImage}
-                    style={{
-                      y: useTransform(smoothProgress, [0, 1], ['-8%', '8%'])
-                    }}
                   />
-                  <Motion.img 
-                    src={projectImage} 
+                  <img 
+                    src={projectImage3} 
                     alt="Project planning" 
                     className={styles.smallImage}
-                    style={{
-                      y: useTransform(smoothProgress, [0, 1], ['8%', '-8%'])
-                    }}
                   />
                 </div>
-              </div>
+              </Motion.div>
             </Motion.div>
           </div>
 
@@ -258,9 +257,8 @@ const Team = () => {
                   <Motion.div 
                     className={styles.memberImageContainer}
                     whileHover={{ 
-                      scale: 1.08,
-                      rotate: 3,
-                      transition: { duration: 0.2, ease: "easeOut" }
+                      scale: 1.05,
+                      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
                     }}
                   >
                     <img 
@@ -341,7 +339,7 @@ const Team = () => {
                 {/* Decorative Elements */}
                 <div className={styles.cardDecorations}>
                   <div className={styles.cornerDecoration} />
-                  <div className={styles.sideDecoration} />
+                  {/* <div className={styles.sideDecoration} /> */}
                 </div>
               </Motion.div>
             );
@@ -655,7 +653,7 @@ const Team = () => {
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <img src={heroImage} alt="Team Collaboration" />
+                <img src={projectImage2} alt="Team Collaboration" />
               </Motion.div>
               
               <Motion.div 
@@ -669,7 +667,7 @@ const Team = () => {
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <img src={heroImage} alt="Design Process" />
+                <img src={projectImage3} alt="Design Process" />
               </Motion.div>
               
               <Motion.div 
@@ -683,11 +681,11 @@ const Team = () => {
                   ease: [0.23, 1, 0.32, 1]
                 }}
               >
-                <img src={heroImage} alt="Project Planning" />
+                <img src={projectImage4} alt="Project Planning" />
               </Motion.div>
             </Motion.div>
           </Motion.div>
-
+{/* stats */}
           <Motion.div 
             className={styles.collaborationStats}
             initial={{ opacity: 0, y: 30 }}

@@ -5,15 +5,6 @@ import styles from './home.module.css';
 import SelectedProjects from '../../components/SelectedProjects/SelectedProjects';
 import SocialGrid from '../../components/SocialGrid/SocialGrid';
 import { motion as Motion, useScroll, useTransform } from 'framer-motion';
-// import { ThreeDMarquee } from '../../components/ThreeDMarquee/ThreeDMarquee';
-// import image1 from '../../assets/images/1.jpg';
-// import image2 from '../../assets/images/2.png';
-// import image3 from '../../assets/images/3.jpg';
-// import image4 from '../../assets/images/4.jpg';
-// import image5 from '../../assets/images/1.jpg';
-// import image6 from '../../assets/images/2.png';
-// import image7 from '../../assets/images/3.jpg';
-// import image8 from '../../assets/images/4.jpg';
 const Home = () => {
   const { scrollYProgress } = useScroll();
   const smoothProgress = useTransform(scrollYProgress, [0.6, 0.8], [0.3, 0.1]);
@@ -45,26 +36,7 @@ const Home = () => {
     }
   ];
 
-  // Sample images for the marquee - replace these with your actual project images
-  // const images = [
-  //   image1,   
-  //   image2,
-  //   image3,
-  //   image4,
-  //   image5,
-  //   image6,
-  //   image7,
-  //   image8,
-  //   image1,   
-  //   image2,
-  //   image3,
-  //   image4,
-  //   image5,
-  //   image6,
-  //   image7,
-  //   image8,
-  // ];
-
+  
   return (
     <div className={styles.home}>
       <Hero />
@@ -154,10 +126,6 @@ const Home = () => {
       </section>
 
       <SocialGrid />
-      {/* <div className={styles.marqueeSection}>
-        <ThreeDMarquee images={images} />
-      </div> */}
-      {/* Other home page sections will go here */}
     </div>
   );
 };

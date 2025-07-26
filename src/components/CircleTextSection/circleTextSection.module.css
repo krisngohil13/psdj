@@ -6,6 +6,23 @@
   display: flex;
   flex-direction: column;
   gap: 6rem;
+  position: relative;
+}
+
+/* Background Pattern */
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: 
+    linear-gradient(90deg, transparent 95%, rgba(193, 192, 192, 0.1) 95%),
+    linear-gradient(transparent 95%, rgba(131, 131, 131, 0.1) 95%);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Title Section Styles */
@@ -217,8 +234,12 @@
   }
 
   .backgroundShape {
-    width: 85%;
-    height: 50%;
+    display: none;
+  }
+
+  .imageWrapper {
+    clip-path: none;
+    width: 100%;
   }
 
   .particle {
@@ -254,8 +275,12 @@
   }
 
   .backgroundShape {
-    width: 90%;
-    height: 85%;
+    display: none;
+  }
+
+  .imageWrapper {
+    clip-path: none;
+    width: 100%;
   }
 
   .textContainer {

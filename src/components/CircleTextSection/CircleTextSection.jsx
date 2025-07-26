@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion as Motion, useScroll, useTransform } from 'framer-motion';
 import styles from './circleTextSection.module.css';
-import interior1 from '../../assets/images/1.jpg';
+import interior1 from '../../assets/images/1.webp';
 import { Link } from 'react-router-dom';
 
 const CircleTextSection = () => {
@@ -15,33 +15,40 @@ const CircleTextSection = () => {
   const bgShapeY = useTransform(scrollYProgress, [0, 1], ["-10%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+  const patternY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
-  // Create array of particles
-  const particles = Array.from({ length: 15 }, (_, index) => (
-    <Motion.div
-      key={index}
-      className={`${styles.particle} ${styles[`particle${index + 1}`]}`}
-      initial={{ 
-        opacity: 0,
-        scale: 0.5,
-        x: (index % 2 === 0 ? -20 : 20)
-      }}
-      whileInView={{ 
-        opacity: [0.2, 0.4, 0.2],
-        scale: [1, 1.2, 1],
-        x: 0
-      }}
-      transition={{
-        duration: 3 + (index * 0.2),
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: index * 0.1
-      }}
-    />
-  ));
+  // // Create array of particles
+  // const particles = Array.from({ length: 15 }, (_, index) => (
+  //   <Motion.div
+  //     key={index}
+  //     className={`${styles.particle} ${styles[`particle${index + 1}`]}`}
+  //     initial={{ 
+  //       opacity: 0,
+  //       scale: 0.5,
+  //       x: (index % 2 === 0 ? -20 : 20)
+  //     }}
+  //     whileInView={{ 
+  //       opacity: [0.2, 0.4, 0.2],
+  //       scale: [1, 1.2, 1],
+  //       x: 0
+  //     }}
+  //     transition={{
+  //       duration: 3 + (index * 0.2),
+  //       repeat: Infinity,
+  //       ease: "easeInOut",
+  //       delay: index * 0.1
+  //     }}
+  //   />
+  // ));
 
   return (
     <section ref={sectionRef} className={styles.section}>
+      {/* Background Pattern */}
+      <Motion.div 
+        className={styles.backgroundPattern}
+        style={{ y: patternY }}
+      />
+      
       {/* Title Section */}
       <div className={styles.titleSection}>
         <h1 className={styles.mainTitle}>
@@ -121,9 +128,9 @@ const CircleTextSection = () => {
           />
           
           {/* Particles Container */}
-          <div className={styles.particlesContainer}>
+          {/* <div className={styles.particlesContainer}>
             {particles}
-          </div>
+          </div> */}
 
           {/* Main Image */}
           <Motion.div 

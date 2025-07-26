@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react';
+
 import styles from './footer.module.css';
 
 const Footer = () => {
-  const [particles, setParticles] = useState([]);
 
-  useEffect(() => {
-    // Generate more particles with updated properties
-    const newParticles = Array.from({ length: 20 }, () => ({
-      width: `${Math.random() * 4 + 2}px`, // Smaller particles
-      height: `${Math.random() * 4 + 2}px`,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 5}s`, // Longer delays for more varied movement
-      opacity: Math.random() * 0.08 + 0.02 // Much lower opacity for subtle effect
-    }));
-    setParticles(newParticles);
-  }, []);
 
   return (
     <footer className={styles.footer}>
       {/* Background Elements */}
       <div className={styles.backgroundElements}>
         <div className={styles.patternGrid} />
-        {particles.map((style, index) => (
+        {/* {particles.map((style, index) => (
           <div key={index} className={styles.particle} style={style} />
-        ))}
+        ))} */}
 
       </div>
 
